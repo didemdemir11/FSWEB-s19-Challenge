@@ -4,45 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0f77b55-00b1-41ed-a43d-2b769872a2f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/LikeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/RetweetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/TweetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Like.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Retweet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Tweet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/CommentNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/DuplicateEmailException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/DuplicateLikeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/DuplicateRetweetException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/DuplicateUsernameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/TweetNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/UnauthorizedAccessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/CommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/LikeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/RetweetRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/TweetRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/LikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/RetweetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/TweetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/TwitterApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/TwitterApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="e0f77b55-00b1-41ed-a43d-2b769872a2f7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
