@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e0f77b55-00b1-41ed-a43d-2b769872a2f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/LikeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/RetweetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/TweetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Like.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Retweet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Tweet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/CommentNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/DuplicateEmailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/DuplicateLikeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/DuplicateRetweetException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/DuplicateUsernameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/TweetNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/UnauthorizedAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/CommentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/LikeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/RetweetRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/TweetRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/LikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/RetweetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/TweetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/TwitterApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/TwitterApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2sw5crQk9D6RJyzk0zTyhigflgl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TwitterApiApplication.executor": "Run",
+    "Maven.twitter-api [clean].executor": "Run",
+    "Maven.twitter-api [install].executor": "Run",
+    "Maven.twitter-api [org.springframework.boot:spring-boot-maven-plugin:3.4.2:run].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sinem/Documents/GitHub/FSWEB-s19-Challenge/twitter-api",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="TwitterApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.twitter.clone.twitter_api.TwitterApiApplication" />
+      <module name="twitter-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twitter.clone.twitter_api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TwitterApiApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0f77b55-00b1-41ed-a43d-2b769872a2f7" name="Changes" comment="" />
+      <created>1739353880312</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739353880312</updated>
+    </task>
+    <servers />
+  </component>
+</project>
