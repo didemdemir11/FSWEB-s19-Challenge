@@ -11,21 +11,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.ArrayList;
 
 @SpringBootApplication
-public class TwitterApiApplication implements CommandLineRunner {
+public class TwitterApiApplication{
 	@Autowired
 	private UserRepository userRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(TwitterApiApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) {
 
-		User user = new User("testuser", "password123", "testuser@email.com", Role.USER, new ArrayList<>());
-
-		userRepository.save(user);
-
-		// Kullanıcıları ekrana yazdır
-		userRepository.findAll().forEach(System.out::println);
-	}
 }

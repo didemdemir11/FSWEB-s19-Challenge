@@ -4,6 +4,8 @@ package com.twitter.clone.twitter_api.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "likes", uniqueConstraints = {
         @UniqueConstraint(columnNames = { "user_id", "tweet_id" })
@@ -26,4 +28,6 @@ public class Like {
     @ManyToOne
     @JoinColumn(name = "tweet_id", nullable = false)
     private Tweet tweet;
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 }

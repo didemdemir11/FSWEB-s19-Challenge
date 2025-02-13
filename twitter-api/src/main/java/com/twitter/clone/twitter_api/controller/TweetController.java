@@ -1,11 +1,13 @@
 package com.twitter.clone.twitter_api.controller;
 
+import com.twitter.clone.twitter_api.entity.Role;
 import com.twitter.clone.twitter_api.entity.Tweet;
 import com.twitter.clone.twitter_api.entity.User;
 import com.twitter.clone.twitter_api.service.TweetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +27,10 @@ public class TweetController {
     }
 
     @GetMapping("/findByUserId")
-    public ResponseEntity<List<Tweet>> getUserTweets(@AuthenticationPrincipal User user) {
+    public ResponseEntity<List<Tweet>> getUserTweets(@AuthenticationPrincipal UserDetails principal) {
+        User user = tweetService.findUserByUsername(principal.getUsername())
+                .orElseThrow(() -> new RuntimeException("Yetkisiz işlem! Kullanıcı bulunamadı."));
+
         List<Tweet> tweets = tweetService.getTweetsByUser(user);
         return ResponseEntity.ok(tweets);
     }
@@ -38,14 +43,26 @@ public class TweetController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Tweet> updateTweet(@PathVariable Long id, @RequestParam String content, @AuthenticationPrincipal User user) {
-        Tweet updatedTweet = tweetService.updateTweet(id, content, user);
+    public ResponseEntity<Tweet> updateTweet(@PathVariable Long id, @RequestParam String content) {
+        Tweet updatedTweet = tweetService.updateTweet(id, content);
         return ResponseEntity.ok(updatedTweet);
     }
 
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteTweet(@PathVariable Long id, @AuthenticationPrincipal User user) {
-        tweetService.deleteTweet(id, user);
+    public ResponseEntity<String> deleteTweet(@PathVariable Long id, @AuthenticationPrincipal UserDetails principal) {
+        User user = tweetService.findUserByUsername(principal.getUsername())
+                .orElseThrow(() -> new RuntimeException("Yetkisiz işlem! Kullanıcı bulunamadı."));
+
+        Tweet tweet = tweetService.getTweetById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Tweet bulunamadı"));
+
+        // Kullanıcı Tweet sahibi mi veya Admin mi?
+        if (!tweet.getUser().getId().equals(user.getId()) && !user.getRole().equals(Role.ADMIN)) {
+            return ResponseEntity.status(403).body("Bu Tweet'i silme yetkiniz yok!");
+        }
+
+        tweetService.deleteTweet(id);
         return ResponseEntity.noContent().build();
     }
 }

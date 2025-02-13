@@ -1,8 +1,12 @@
 package com.twitter.clone.twitter_api.service;
+import com.twitter.clone.twitter_api.entity.Role;
 import com.twitter.clone.twitter_api.entity.User;
 import com.twitter.clone.twitter_api.exception.UnauthorizedAccessException;
+import com.twitter.clone.twitter_api.exception.UserNotFoundException;
 import com.twitter.clone.twitter_api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,9 +15,11 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
     public User saveUser(User user) {
         return userRepository.save(user);
     }
@@ -22,47 +28,47 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> getUserById(Long id) {
-        return userRepository.findById(id);
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("Kullanıcı bulunamadı"));
     }
 
-    public Optional<User> getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new UserNotFoundException("Kullanıcı bulunamadı"));
     }
+    public User getCurrentUser (UserDetails userDetails) {
+        return userRepository.findByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new UserNotFoundException("Giriş yapan kullanıcı bulunamadı."));
+    }
+    public void deleteUser(Long id,@AuthenticationPrincipal UserDetails userDetails) {
+        User currentUser = getCurrentUser(userDetails); // Mevcut kullanıcıyı al
+        User userToDelete = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("Kullanıcı bulunamadı"));
 
-    public void deleteUser(Long id, Long requestUserId) {
-        Optional<User> userOpt = userRepository.findById(id);
-
-        if (userOpt.isPresent()) {
-            User user = userOpt.get();
-            // Yetkilendirme kontrolü (Sadece admin veya kullanıcı kendi kaydını silebilir)
-            if (!user.getId().equals(requestUserId)) {
-                throw new UnauthorizedAccessException("Bu işlemi gerçekleştirme yetkiniz yok!");
-            }
-            userRepository.delete(user);
-        } else {
-            throw new IllegalArgumentException("Kullanıcı bulunamadı");
+        // Yetkilendirme kontrolü
+        if (!currentUser.getId().equals(userToDelete.getId()) && currentUser.getRole() != Role.ADMIN) {
+            throw new UnauthorizedAccessException("Bu işlemi gerçekleştirme yetkiniz yok!");
         }
+        userRepository.delete(userToDelete);
     }
-    public User updateUser(Long id, User updatedUser, Long requestUserId) {
-        Optional<User> userOpt = userRepository.findById(id);
 
-        if (userOpt.isPresent()) {
-            User user = userOpt.get();
-            // Yetkilendirme kontrolü (Sadece admin veya kullanıcı kendi kaydını güncelleyebilir)
-            if (!user.getId().equals(requestUserId)) {
-                throw new UnauthorizedAccessException("Bu işlemi gerçekleştirme yetkiniz yok!");
-            }
+    public User updateUser(Long id, User updatedUser,@AuthenticationPrincipal UserDetails userDetails) {
+        User currentUser = getCurrentUser(userDetails);
+        User userToUpdate = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("Kullanıcı bulunamadı"));
 
-            // Kullanıcı bilgilerini güncelle
-            user.setUsername(updatedUser.getUsername());
-            user.setEmail(updatedUser.getEmail());
-            user.setPassword(updatedUser.getPassword());
-            user.setRole(updatedUser.getRole());
-
-            return userRepository.save(user);
-        } else {
-            throw new IllegalArgumentException("Kullanıcı bulunamadı");
+        // Yetkilendirme kontrolü
+        if (!currentUser.getId().equals(userToUpdate.getId()) && currentUser.getRole() != Role.ADMIN) {
+            throw new UnauthorizedAccessException("Bu işlemi gerçekleştirme yetkiniz yok!");
         }
+
+        // Güncelleme işlemi
+        userToUpdate.setUsername(updatedUser.getUsername());
+        userToUpdate.setEmail(updatedUser.getEmail());
+        userToUpdate.setPassword(updatedUser.getPassword());
+        userToUpdate.setRole(updatedUser.getRole());
+
+        return userRepository.save(userToUpdate);
     }
 }

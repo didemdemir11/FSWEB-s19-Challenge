@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,4 +50,5 @@ public class User {
         this.role = role;
         this.tweets = new ArrayList<>();
     }
+
 }
