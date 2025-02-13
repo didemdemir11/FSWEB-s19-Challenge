@@ -42,11 +42,11 @@ public class UserService {
                 .orElseThrow(() -> new UserNotFoundException("Giriş yapan kullanıcı bulunamadı."));
     }
     public void deleteUser(Long id,@AuthenticationPrincipal UserDetails userDetails) {
-        User currentUser = getCurrentUser(userDetails); // Mevcut kullanıcıyı al
+        User currentUser = getCurrentUser(userDetails);
         User userToDelete = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException("Kullanıcı bulunamadı"));
 
-        // Yetkilendirme kontrolü
+
         if (!currentUser.getId().equals(userToDelete.getId()) && currentUser.getRole() != Role.ADMIN) {
             throw new UnauthorizedAccessException("Bu işlemi gerçekleştirme yetkiniz yok!");
         }
@@ -58,12 +58,12 @@ public class UserService {
         User userToUpdate = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException("Kullanıcı bulunamadı"));
 
-        // Yetkilendirme kontrolü
+
         if (!currentUser.getId().equals(userToUpdate.getId()) && currentUser.getRole() != Role.ADMIN) {
             throw new UnauthorizedAccessException("Bu işlemi gerçekleştirme yetkiniz yok!");
         }
 
-        // Güncelleme işlemi
+
         userToUpdate.setUsername(updatedUser.getUsername());
         userToUpdate.setEmail(updatedUser.getEmail());
         userToUpdate.setPassword(updatedUser.getPassword());

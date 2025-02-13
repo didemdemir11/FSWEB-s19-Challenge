@@ -11,6 +11,5 @@ import java.util.List;
 public interface TweetRepository extends JpaRepository<Tweet,Long> {
     List<Tweet> findByUserId(Long userId);
     List<Tweet> findByUserIdOrderByCreatedAtDesc(Long userId);
-    @Query("SELECT COUNT(t) > 0 FROM Tweet t WHERE t.id = :tweetId AND t.user.id = :userId")
-    boolean existsByIdAndUserId(Long tweetId, Long userId);
+
 }

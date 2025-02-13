@@ -23,9 +23,9 @@ public class RetweetController {
             Retweet createdRetweet = retweetService.addRetweet(tweetId, user);
             return ResponseEntity.status(201).body(createdRetweet); // 201 Created
         } catch (DuplicateRetweetException e) {
-            return ResponseEntity.status(400).body(null); // 400 Bad Request - Duplicate Retweet
+            return ResponseEntity.status(400).body(null);
         } catch (TweetNotFoundException e) {
-            return ResponseEntity.status(404).body(null); // 404 Not Found - Tweet not found
+            return ResponseEntity.status(404).body(null);
         }
     }
 
@@ -35,9 +35,9 @@ public class RetweetController {
             retweetService.removeRetweet(retweetId, user);
             return ResponseEntity.noContent().build();
         } catch (UnauthorizedAccessException e) {
-            return ResponseEntity.status(403).body("Bu retweet'i kaldırma yetkiniz yok!"); // 403 Forbidden
+            return ResponseEntity.status(403).body("Bu retweet'i kaldırma yetkiniz yok!");
         } catch (TweetNotFoundException e) {
-            return ResponseEntity.status(404).body("Retweet bulunamadı."); // 404 Not Found - Retweet not found
+            return ResponseEntity.status(404).body("Retweet bulunamadı.");
         }
     }
 }

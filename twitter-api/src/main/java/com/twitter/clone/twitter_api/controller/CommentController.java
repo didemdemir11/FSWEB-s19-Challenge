@@ -24,7 +24,7 @@ public class CommentController {
     @PutMapping("/{id}")
     public ResponseEntity<Comment> updateComment(@PathVariable Long id, @RequestBody String content, @AuthenticationPrincipal User user) {
         Comment updatedComment = commentService.updateComment(id, content, user);
-        return ResponseEntity.ok(updatedComment); // 200 OK
+        return ResponseEntity.ok(updatedComment);
     }
 
     @DeleteMapping("/{id}")

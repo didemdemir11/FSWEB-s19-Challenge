@@ -14,6 +14,5 @@ public interface RetweetRepository extends JpaRepository<Retweet, Long> {
     List<Retweet> findByTweetId(Long tweetId);
     List<Retweet> findByUserId(Long userId);
     Optional<Retweet> findByUserIdAndTweetId(Long userId, Long tweetId);
-    @Query("SELECT COUNT(r) FROM Retweet r WHERE r.tweet.id = :tweetId")
-    long countRetweetsByTweetId(Long tweetId);
+
 }

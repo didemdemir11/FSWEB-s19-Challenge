@@ -21,7 +21,7 @@ public class LikeController {
             Like createdLike = likeService.addLike(tweetId, user);
             return ResponseEntity.status(201).body(createdLike); // 201 Created
         } catch (DuplicateLikeException e) {
-            return ResponseEntity.status(400).body(null); // 400 Bad Request - Duplicate Like
+            return ResponseEntity.status(400).body(null);
         }
     }
 

@@ -40,7 +40,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form.disable()) // Login formunu devre dışı bırak
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.ALWAYS) // 🚀 HER ZAMAN OTURUM OLUŞTUR
+                        .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
                 );
 
         return http.build();

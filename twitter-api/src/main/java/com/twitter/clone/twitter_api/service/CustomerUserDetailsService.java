@@ -30,7 +30,7 @@ public class CustomerUserDetailsService implements UserDetailsService {
 
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getUsername())
-                .password(user.getPassword()) // Şifre zaten hashlenmiş olacak
+                .password(user.getPassword())
                 .authorities(authorities)
                 .build();
     }

@@ -3,7 +3,6 @@ package com.twitter.clone.twitter_api.controller;
 import com.twitter.clone.twitter_api.entity.User;
 import com.twitter.clone.twitter_api.service.AuthService;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

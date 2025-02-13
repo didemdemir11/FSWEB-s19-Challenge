@@ -33,7 +33,7 @@ public class TweetService {
     }
 
     public List<Tweet> getTweetsByUser(User requestUser) {
-        return tweetRepository.findByUserIdOrderByCreatedAtDesc(requestUser.getId()); // Tarihe göre sıralı tweetler
+        return tweetRepository.findByUserIdOrderByCreatedAtDesc(requestUser.getId());
     }
 
     public Optional<Tweet> getTweetById(Long id) {
@@ -41,7 +41,7 @@ public class TweetService {
     }
 
     public List<Tweet> getTweetsByUserId(Long userId) {
-        return tweetRepository.findByUserIdOrderByCreatedAtDesc(userId); // Tarihe göre sıralı tweetler
+        return tweetRepository.findByUserIdOrderByCreatedAtDesc(userId);
     }
 
     public void deleteTweet(Long tweetId) {
@@ -49,7 +49,6 @@ public class TweetService {
         Tweet tweet = tweetRepository.findById(tweetId)
                 .orElseThrow(() -> new TweetNotFoundException("Tweet bulunamadı."));
 
-        // Kullanıcı tweet sahibi mi veya ADMIN mi?
         if (!tweet.getUser().getId().equals(currentUser.getId()) && currentUser.getRole() != Role.ADMIN) {
             throw new UnauthorizedAccessException("Bu tweet'i silme yetkiniz yok!");
         }
