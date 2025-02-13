@@ -11,9 +11,8 @@ import java.util.Optional;
 public interface CommentRepository extends JpaRepository<Comment, Long> {
     List<Comment> findByTweetIdOrderByCreatedAtDesc(Long tweetId);
     List<Comment> findByUserIdOrderByCreatedAtDesc(Long userId);
-    List<Comment> findByTweetId(Long tweetId);
     Optional<Comment> findByIdAndUserId(Long id, Long userId);
-    List<Comment> findByUserId(Long userId);
+
     @Query("SELECT c FROM Comment c WHERE c.id = :commentId AND c.tweet.user.id = :tweetOwnerId")
     Optional<Comment> findByIdAndTweetUserId(Long commentId, Long tweetOwnerId);
 }

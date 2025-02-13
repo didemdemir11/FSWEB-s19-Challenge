@@ -14,5 +14,6 @@ public interface RetweetRepository extends JpaRepository<Retweet, Long> {
     List<Retweet> findByTweetId(Long tweetId);
     List<Retweet> findByUserId(Long userId);
     Optional<Retweet> findByUserIdAndTweetId(Long userId, Long tweetId);
-
+    @Query("SELECT COUNT(r) > 0 FROM Retweet r WHERE r.user.id = :userId AND r.tweet.id = :tweetId")
+    boolean existsByUserIdAndTweetId(Long userId, Long tweetId);
 }

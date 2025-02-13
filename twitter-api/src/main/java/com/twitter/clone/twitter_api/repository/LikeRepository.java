@@ -9,7 +9,6 @@ import java.util.Optional;
 public interface LikeRepository extends JpaRepository<Like, Long> {
     List<Like> findByTweetIdOrderByCreatedAtDesc(Long tweetId);
     List<Like> findByUserIdOrderByCreatedAtDesc(Long userId);
-    List<Like> findByTweetId(Long tweetId);
     List<Like> findByUserId(Long userId);
     Optional<Like> findByUserIdAndTweetId(Long userId, Long tweetId);
 }

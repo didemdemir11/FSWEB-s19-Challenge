@@ -52,8 +52,8 @@ public class TweetService {
         if (!tweet.getUser().getId().equals(currentUser.getId()) && currentUser.getRole() != Role.ADMIN) {
             throw new UnauthorizedAccessException("Bu tweet'i silme yetkiniz yok!");
         }
-
-        tweetRepository.delete(tweet);
+        tweet.setActive(false);
+        tweetRepository.save(tweet);
     }
     public Tweet updateTweet(Long tweetId, String newContent) {
         User currentUser = getAuthenticatedUser();

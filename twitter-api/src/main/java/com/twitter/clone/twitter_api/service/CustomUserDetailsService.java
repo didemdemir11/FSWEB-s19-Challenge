@@ -14,11 +14,11 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
-public class CustomerUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {
 
     private UserRepository userRepository;
     @Autowired
-    public CustomerUserDetailsService(UserRepository userRepository) {
+    public CustomUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
     @Override

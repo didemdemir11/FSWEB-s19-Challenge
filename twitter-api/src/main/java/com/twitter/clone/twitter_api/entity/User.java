@@ -1,5 +1,6 @@
 package com.twitter.clone.twitter_api.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -41,7 +42,26 @@ public class User {
     private Role role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Tweet> tweets = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_followers",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "follower_id")
+    )
+    @JsonIgnore
+    private List<User> followers = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_following",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "following_id")
+    )
+    @JsonIgnore
+    private List<User> following = new ArrayList<>();
 
     public User(String username, String password, String email, Role role, List<Tweet> tweets) {
         this.username = username;
