@@ -5,6 +5,7 @@ import com.twitter.clone.twitter_api.entity.Tweet;
 import com.twitter.clone.twitter_api.entity.User;
 import com.twitter.clone.twitter_api.service.TweetService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +21,14 @@ public class TweetController {
     private TweetService tweetService;
 
     @PostMapping
-    public ResponseEntity<Tweet> createTweet(@RequestBody Tweet tweet, @AuthenticationPrincipal User user) {
+    public ResponseEntity<Tweet> createTweet(@RequestBody Tweet tweet, @AuthenticationPrincipal UserDetails userDetails) {
+        if (userDetails == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        }
+
+        User user = tweetService.findUserByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new RuntimeException("Kullanıcı bulunamadı!"));
+
         tweet.setUser(user);
         Tweet createdTweet = tweetService.createTweet(tweet);
         return ResponseEntity.status(201).body(createdTweet);
@@ -38,7 +46,7 @@ public class TweetController {
     @GetMapping("/findById/{id}")
     public ResponseEntity<Tweet> getTweetById(@PathVariable Long id) {
         return tweetService.getTweetById(id)
-                .map(ResponseEntity::ok)  // 200 OK
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 

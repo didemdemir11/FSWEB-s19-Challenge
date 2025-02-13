@@ -48,7 +48,7 @@ public class User {
         this.password = password;
         this.email = email;
         this.role = role;
-        this.tweets = new ArrayList<>();
+        this.tweets = tweets != null ? tweets : new ArrayList<>();
     }
 
 }

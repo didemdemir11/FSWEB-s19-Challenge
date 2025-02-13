@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -22,40 +23,26 @@ public class SecurityConfig {
 
         return new BCryptPasswordEncoder();
     }
+
     @Bean
-    public AuthenticationManager authenticationManager(CustomerUserDetailsService userDetailsService) {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService(userDetailsService);
-        provider.setPasswordEncoder(passwordEncoder());
-        return new ProviderManager(provider);
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // CSRF korumasını kapattık
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/register", "/auth/login").permitAll() // Kayıt ve giriş açık
-                        .requestMatchers("/tweet/**").authenticated() // Tweet işlemleri giriş gerektirir
+                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/tweet/**").authenticated()
                         .anyRequest().authenticated()
                 )
-                .formLogin(form -> form
-                        .loginProcessingUrl("/auth/login") // Login endpointi
-                        .defaultSuccessUrl("/tweet/findByUserId", true) // Başarılı giriş sonrası yönlendirme
-                        .permitAll()
-                )
-                .logout(logout -> logout
-                        .logoutUrl("/auth/logout")
-                        .logoutSuccessUrl("/auth/login")
-                        .invalidateHttpSession(true) // Oturumu sıfırla
-                        .clearAuthentication(true)
-                        .permitAll()
-                )
+                .formLogin(form -> form.disable()) // Login formunu devre dışı bırak
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) // Eğer gerekiyorsa oturum oluştur
+                        .sessionCreationPolicy(SessionCreationPolicy.ALWAYS) // 🚀 HER ZAMAN OTURUM OLUŞTUR
                 );
 
         return http.build();
     }
-
 }
