@@ -30,7 +30,7 @@ public class AuthController {
     public ResponseEntity<String> registerUser(@RequestBody User user, HttpServletRequest request) {
         User newUser = authService.registerUser(user.getUsername(), user.getEmail(), user.getPassword());
 
-        
+
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(newUser.getUsername(), user.getPassword())
         );

@@ -27,7 +27,7 @@ public class RetweetService {
             throw new TweetNotFoundException("Tweet bulunamadı.");
         }
 
-        // Kullanıcı daha önce bu tweeti retweetlemiş mi kontrol edelim
+
         Optional<Retweet> existingRetweet = retweetRepository.findByUserIdAndTweetId(requestUser.getId(), tweetId);
         if (existingRetweet.isPresent()) {
             throw new DuplicateRetweetException("Bu tweet zaten retweet edildi.");
@@ -52,7 +52,7 @@ public class RetweetService {
         if (retweetOpt.isPresent()) {
             Retweet retweet = retweetOpt.get();
 
-            // Retweeti sadece sahibi silebilir
+
             if (!retweet.getUser().getId().equals(requestUser.getId())) {
                 throw new UnauthorizedAccessException("Bu retweet'i kaldırma yetkiniz yok!");
             }

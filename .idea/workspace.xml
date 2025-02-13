@@ -8,9 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/TweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/TweetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/RetweetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/RetweetService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
