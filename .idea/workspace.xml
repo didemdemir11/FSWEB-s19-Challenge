@@ -4,41 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0f77b55-00b1-41ed-a43d-2b769872a2f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/dto/CommentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/LikeNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/exception/RetweetNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/security/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/security/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/LikeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/LikeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/RetweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/RetweetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/TweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/controller/TweetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Like.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Like.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Retweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Retweet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Tweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/Tweet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/LikeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/LikeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/RetweetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/RetweetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/TweetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/TweetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/CustomerUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/LikeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/LikeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/RetweetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/RetweetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/TweetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/TweetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/java/com/twitter/clone/twitter_api/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="e0f77b55-00b1-41ed-a43d-2b769872a2f7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
