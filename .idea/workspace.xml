@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0f77b55-00b1-41ed-a43d-2b769872a2f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/twitter-api/src/test/java/com/twitter/clone/twitter_api/serviceTest/AuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-api/src/test/java/com/twitter/clone/twitter_api/serviceTest/AuthServiceTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e0f77b55-00b1-41ed-a43d-2b769872a2f7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
