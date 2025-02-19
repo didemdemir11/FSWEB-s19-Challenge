@@ -68,7 +68,7 @@ public class AuthServiceTest {
 
     }
 
-    /** ✅ Kullanıcı başarıyla kaydolmalı **/
+  
     @Test
     void testRegisterUser_Success() {
         when(userRepository.findByUsername("newUser")).thenReturn(Optional.empty());
@@ -83,7 +83,7 @@ public class AuthServiceTest {
         verify(userRepository, times(1)).save(any(User.class));
     }
 
-    /** ❌ Aynı username kullanılıyorsa hata fırlatılmalı **/
+
     @Test
     void testRegisterUser_DuplicateUsername() {
         when(userRepository.findByUsername("testUser")).thenReturn(Optional.of(testUser));
@@ -91,7 +91,7 @@ public class AuthServiceTest {
         assertThrows(DuplicateUsernameException.class, () -> authService.registerUser("testUser", "unique@example.com", "password"));
     }
 
-    /** ❌ Aynı email kullanılıyorsa hata fırlatılmalı **/
+
     @Test
     void testRegisterUser_DuplicateEmail() {
         when(userRepository.findByEmail("test@example.com")).thenReturn(Optional.of(testUser));
@@ -99,7 +99,7 @@ public class AuthServiceTest {
         assertThrows(DuplicateEmailException.class, () -> authService.registerUser("uniqueUser", "test@example.com", "password"));
     }
 
-    /** ✅ Kullanıcı başarıyla giriş yapmalı **/
+
     @Test
     void testLoginUser_Success() {
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class))).thenReturn(authentication);
@@ -114,7 +114,7 @@ public class AuthServiceTest {
         verify(jwtUtil, times(1)).generateToken("testUser");
     }
 
-    /** ❌ Yanlış şifre girildiğinde BadCredentialsException fırlatılmalı **/
+
     @Test
     void testLoginUser_BadCredentials() {
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class))).thenThrow(new BadCredentialsException("Geçersiz kullanıcı adı veya şifre!"));
@@ -122,7 +122,7 @@ public class AuthServiceTest {
         assertThrows(BadCredentialsException.class, () -> authService.loginUser("testUser", "wrongPassword"));
     }
 
-    /** ❌ Kullanıcı bulunamazsa UserNotFoundException fırlatılmalı **/
+
     @Test
     void testLoginUser_UserNotFound() {
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class))).thenReturn(authentication);
@@ -131,7 +131,7 @@ public class AuthServiceTest {
         assertThrows(UserNotFoundException.class, () -> authService.loginUser("unknownUser", "password"));
     }
 
-    /** ✅ Giriş yapan kullanıcıyı alma testi **/
+
     @Test
     void testGetCurrentUser_Success() {
         SecurityContext securityContext = mock(SecurityContext.class);
@@ -148,7 +148,7 @@ public class AuthServiceTest {
         verify(userRepository, times(1)).findByUsername("testUser");
     }
 
-    /** ❌ Kullanıcı oturum açmamışsa UserNotFoundException fırlatılmalı **/
+
     @Test
     void testGetCurrentUser_UserNotFound() {
         SecurityContext securityContext = mock(SecurityContext.class);
