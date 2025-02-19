@@ -68,7 +68,7 @@ public class AuthServiceTest {
 
     }
 
-  
+
     @Test
     void testRegisterUser_Success() {
         when(userRepository.findByUsername("newUser")).thenReturn(Optional.empty());
